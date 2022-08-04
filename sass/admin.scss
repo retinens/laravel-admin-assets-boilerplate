@@ -2,16 +2,17 @@
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
-//@import '~bootstrap/scss/functions';
+
 // 2. Vendors
+
 @import "~bootstrap/scss/functions";
 @import "~@themesberg/volt-bootstrap-5-dashboard/src/scss/volt/variables";
 
-
+// Bootstrap
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
-
 
 // Modify utilities here
 @import "~@themesberg/volt-bootstrap-5-dashboard/src/scss/volt/utilities";
@@ -50,9 +51,9 @@
 // Helpers
 @import "~bootstrap/scss/helpers";
 
+// Utilities
 @import "~bootstrap/scss/utilities/api";
 @import "~datatables.net-bs5/css/dataTables.bootstrap5.min.css";
-
 
 @import "~@themesberg/volt-bootstrap-5-dashboard/src/scss/volt/mixins";
 @import "~@themesberg/volt-bootstrap-5-dashboard/src/scss/volt/functions";
@@ -61,40 +62,29 @@
 @import "~@themesberg/volt-bootstrap-5-dashboard/src/scss/volt/forms";
 
 
-// Vendors
 @import "~select2/src/scss/core";
 @import "~select2-bootstrap-5-theme/src/include-all";
 @import "~trix/dist/trix.css";
-@import "~tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css";
-
-.trix-toolbar .trix-button-group--file-tools {
-    display: none;
-}
-.components-button.edit-post-fullscreen-mode-close.has-icon{ display: none; visibility: hidden; }
-
-.card{
-    @extend .mb-3;
-}
 
 // 3. Base stuff
 @import 'base/base';
 @import'base/fonts';
 @import'base/typography';
 @import'base/helpers';
+
 // 4. Layout-related sections
 @import 'layout/header';
 
 // 5. Components
-@import "components/cookie-consent";
-@import "components/toaster";
+//@import "components/cookie-consent";
 @import "components/table";
-@import "components/dropzone";
+@import "components/cards";
 @import "components/avatars";
-@import "components/media-library-pro3";
+@import 'components/trix';
+@import "components/media-library-pro-bs5";
+@import "components/table-fit";
+@import "components/toaster";
 
 // 6. Page-specific styles
 
 // 7. Themes
-@import 'themes/default';
-
-
