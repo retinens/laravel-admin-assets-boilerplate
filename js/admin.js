@@ -3,14 +3,31 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-require('./bootstrap');
 
+import * as bootstrap from 'bootstrap'
 
-require('./volt')
+window.bootstrap = bootstrap
+import * as popper from 'popper.js'
+
+window.Popper = popper
+import * as jquery from 'jquery'
+
+import * as lodash from 'lodash'
+
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery
+
+window._ = lodash
+import * as axios from 'axios'
+
+window.axios = axios
+//set axios default headers
+
+import "./volt"
 
 import swal from 'sweetalert';
-require("jquery-validation/dist/jquery.validate.min");
-require("jquery-validation/dist/localization/messages_fr");
+import "jquery-validation/dist/jquery.validate.min";
+import "jquery-validation/dist/localization/messages_fr";
 
 jQuery.validator.setDefaults({
     errorElement: 'span',
@@ -26,7 +43,7 @@ jQuery.validator.setDefaults({
     }
 });
 
-window.toastr = require('toastr')
+window.toastr = import('toastr')
 
 $(".form-validate").each((function () {
     $(this).validate({
@@ -36,14 +53,18 @@ $(".form-validate").each((function () {
     })
 }));
 
-require('select2');
+//select2
+
+import * as select2 from 'select2';
+select2();
+
 $('.select2').select2({
     theme: 'bootstrap-5'
 });
 
-require ('datatables.net');
-require('datatables.net-bs5/js/dataTables.bootstrap5');
-
+import DataTable from 'datatables.net';
+window.DataTable = DataTable;
+// import DataTable from "datatables.net-bs5";
 
 $('.dataTable').dataTable({
     "language": {
@@ -61,38 +82,21 @@ $('.deleteConfirm').click(function (event) {
     })
         .then((willDelete) => {
             if (willDelete) {
-                $('#destroy-form-'+$(this).data("id")).submit();
+                $('#destroy-form-' + $(this).data("id")).submit();
             }
         })
 
 });
 
-window.moment = require('moment');
-require("tempusdominus-bootstrap-4");
+window.moment = import('moment');
 
-
-$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
-    icons: {
-        time: 'far fa-clock',
-        date: 'far fa-calendar',
-        up: 'far fa-arrow-up',
-        down: 'far fa-arrow-down',
-        previous: 'far fa-chevron-left',
-        next: 'far fa-chevron-right',
-        today: 'far fa-calendar-check-o',
-        clear: 'far fa-trash',
-        close: 'far fa-times'
-    }
-});
-
-
-window.toastr = require('toastr/toastr');
+window.toastr = import('toastr/toastr');
 
 
 $(document).ready(function () {
     window.livewire.on('toastr', param => {
-        toastr[param['type']](param['message'],param['title'])
+        toastr[param['type']](param['message'], param['title'])
     });
 })
 
-let Trix = require('trix')
+let Trix = import('trix')
